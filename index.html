@@ -5,29 +5,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vila Mari</title>
     <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Montserrat:wght@600;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <header>
+<header>
     <nav class="navbar">
-        <div class="logo">Seu Projeto</div>
-        <ul class="nav-links">
-            <li><a href="#home" onclick="showPage('home')">Home</a></li>
-            <li><a href="#historia" onclick="showPage('historia')">Nossa História</a></li>
-            <li><a href="#redes" onclick="showPage('redes')">Redes Sociais</a></li>
-            <li><a href="#equipe" onclick="showPage('equipe')">Integrantes</a></li>
-        </ul>
+        <div class="logo">Vila Mari</div>
 
-        <div class="theme-switch-wrapper">
-            <label class="theme-switch" for="theme-switch">
-                <input type="checkbox" id="theme-switch" />
-                <div class="slider round"></div>
-            </label>
+        <div class="hamburger-menu">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+
+        <div class="navbar-right">
+            <ul class="nav-links">
+                <li><a href="#home" onclick="showPage('home')">Página Inicial</a></li>
+                <li><a href="#historia" onclick="showPage('historia')">Nossa História</a></li>
+                <li><a href="#redes" onclick="showPage('redes')">Redes Sociais</a></li>
+                <li><a href="#equipe" onclick="showPage('equipe')">Integrantes</a></li>
+            </ul>
+
+            <div class="theme-switch-wrapper">
+                <label class="theme-switch" for="theme-switch">
+                    <input type="checkbox" id="theme-switch" />
+                    <div class="slider round"></div>
+                </label>
+            </div>
         </div>
         </nav>
 </header>
 
-    <main>
+<main>
         
         <section id="home" class="page active">
             <h2>Nossos Produtos</h2>
@@ -59,16 +72,15 @@
                 <p>
                 O objetivo é trazer para o mercado de pesca e maricultura produtos mais baratos e acessíveis, mantendo a qualidade que só a Vila Mari pode oferecer.
                 </p>
-                <br></br>
             <h2>Parceria com a Usina Utinga</h2>
                 <p>A parceria com a Usina Utinga nasceu de uma conexão pessoal do CEO. Em sua juventude, 
                 ele trabalhou como jovem aprendiz na usina, reconhecida como uma das maiores de açúcar e etanol do Estado de Alagoas.</p>
-                <p>Durante seu período na empresa, ele conheceu operários que estavam diretamente envolvidos com o descarte diário do bagaço da cana.</p>
-                <p>Anos depois, essa observação se tornou a base da parceria: utilizar esse resíduo agroindustrial como matéria-prima sustentável para os filamentos de impressão 3D.</p>
+                <p>Durante seu período na empresa, ele conheceu operários que estavam diretamente envolvidos com o descarte diário do bagaço da cana. Anos depois, essa observação se tornou a base da parceria: utilizar esse resíduo agroindustrial como matéria-prima sustentável para os filamentos de impressão 3D.</p>
+                
         </section>
 
         <section id="equipe" class="page">
-            <h2>Nossa Equipe</h2>
+            <h2>Equipe</h2>
             <div class="team-grid">
                 
                 <div class="team-card">
@@ -99,7 +111,7 @@
                 </div>
         </section>
         
-        <section id="redes" class="page">
+    <section id="redes" class="page">
     <h2>Nos Siga!</h2>
     <p>Conecte-se conosco nas nossas redes sociais:</p>
     
@@ -113,9 +125,9 @@
         </a>
         
     </div>
-</section>
+    </section>
 
-    </main>
+</main>
     <script src="script.js"></script>
 </body>
 </html>

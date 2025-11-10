@@ -9,16 +9,23 @@
 <body>
 
     <header>
-        <nav class="navbar">
-            <div class="logo">Vila Mari</div>
-            <ul class="nav-links">
-                <li><a href="#home" onclick="showPage('home')">Pagina principal</a></li>
-                <li><a href="#historia" onclick="showPage('historia')">Nossa História</a></li>
-                <li><a href="#redes" onclick="showPage('redes')">Redes Sociais</a></li>
-                <li><a href="#equipe" onclick="showPage('equipe')">Integrantes</a></li>
-            </ul>
+    <nav class="navbar">
+        <div class="logo">Seu Projeto</div>
+        <ul class="nav-links">
+            <li><a href="#home" onclick="showPage('home')">Home</a></li>
+            <li><a href="#historia" onclick="showPage('historia')">Nossa História</a></li>
+            <li><a href="#redes" onclick="showPage('redes')">Redes Sociais</a></li>
+            <li><a href="#equipe" onclick="showPage('equipe')">Integrantes</a></li>
+        </ul>
+
+        <div class="theme-switch-wrapper">
+            <label class="theme-switch" for="theme-switch">
+                <input type="checkbox" id="theme-switch" />
+                <div class="slider round"></div>
+            </label>
+        </div>
         </nav>
-    </header>
+</header>
 
     <main>
         
@@ -65,12 +72,12 @@
             <div class="team-grid">
                 
                 <div class="team-card">
-                    <img src="https://via.placeholder.com/200x200" alt="Foto do Integrante">
+                    <img src="./Images/jv.jpg" alt="Foto do Integrante">
                     <h3>João Victor</h3>
                     <p class="role">CEO</p>
                 </div>
                 <div class="team-card">
-                    <img src="https://via.placeholder.com/200x200" alt="Foto do Integrante">
+                    <img src="./Images/ms.jpg" alt="Foto do Integrante">
                     <h3>Maria Sibelly</h3>
                     <p class="role">RH/Marketing</p>
                 </div>
@@ -93,15 +100,22 @@
         </section>
         
         <section id="redes" class="page">
-            <h2>Nos Siga!</h2>
-            <p>Conecte-se conosco nas nossas redes sociais:</p>
-            <ul class="social-links">
-                <li><a href="https://www.instagram.com/vila.mari_" target="_blank">Instagram</a></li>
-            </ul>
-        </section>
+    <h2>Nos Siga!</h2>
+    <p>Conecte-se conosco nas nossas redes sociais:</p>
+    
+    <div class="social-icon-links">
+        
+        <a href="https://www.instagram.com/vila.mari_" target="_blank" title="Nosso Instagram">
+            <img src="./Images/v982-d3-04-removebg-preview.png" alt="Logo do Instagram">
+        </a>
+        <a href="SEU_LINK_DO_FACEBOOK" target="_blank" title="Nosso Facebook">
+            <img src="" alt="Logo do Facebook">
+        </a>
+        
+    </div>
+</section>
 
     </main>
-
     <script src="script.js"></script>
 </body>
 </html>

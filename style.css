@@ -1,4 +1,36 @@
-/* ---- Configurações Gerais ---- */
+/* ---- 1. Definição das Variáveis de Cor ---- */
+:root {
+    /* Estas são as cores do TEMA CLARO (Padrão) */
+    --cor-fundo-body: #f4f4f4;
+    --cor-texto: #333;
+    --cor-fundo-navbar: #333;
+    --cor-texto-navbar: white;
+    --cor-fundo-card: #fff;
+    --cor-borda-card: #ddd;
+    --cor-sombra-card: rgba(0,0,0,0.05);
+    --cor-titulo-secao: #111;
+    --cor-texto-funcao-equipe: #666;
+    --cor-link-hover-navbar: #a0cfff;
+    --cor-link-social: #0066cc;
+}
+
+body.dark-mode {
+    /* Estas são as cores do TEMA ESCURO */
+    --cor-fundo-body: #121212;
+    --cor-texto: #f1f1f1;
+    --cor-fundo-navbar: #1f1f1f;
+    --cor-texto-navbar: #f1f1f1;
+    --cor-fundo-card: #1e1e1e;
+    --cor-borda-card: #444;
+    --cor-sombra-card: rgba(0,0,0,0.2);
+    --cor-titulo-secao: #f1f1f1;
+    --cor-texto-funcao-equipe: #aaa;
+    --cor-link-hover-navbar: #a0cfff; /* Pode manter a mesma */
+    --cor-link-social: #a0cfff;
+}
+
+
+/* ---- 2. Configurações Gerais (Usando Variáveis) ---- */
 * {
     box-sizing: border-box;
     margin: 0;
@@ -8,19 +40,20 @@
 body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     line-height: 1.6;
-    background-color: #f4f4f4;
-    color: #333;
+    background-color: var(--cor-fundo-body); /* MODIFICADO */
+    color: var(--cor-texto); /* MODIFICADO */
+    transition: background-color 0.3s, color 0.3s; /* Efeito suave */
 }
 
 main {
     padding: 2rem;
     max-width: 1200px;
-    margin: 0 auto; /* Centraliza o conteúdo principal */
+    margin: 0 auto;
 }
 
 h2 {
     margin-bottom: 1.5rem;
-    color: #111;
+    color: var(--cor-titulo-secao); /* MODIFICADO */
 }
 
 img {
@@ -29,14 +62,14 @@ img {
     border-radius: 8px;
 }
 
-/* ---- Barra de Navegação ---- */
+/* ---- 3. Barra de Navegação (Usando Variáveis) ---- */
 .navbar {
     display: flex;
-    justify-content: space-between; /* Espaça o logo e os links */
+    justify-content: space-between;
     align-items: center;
-    background-color: #333;
+    background-color: var(--cor-fundo-navbar); /* MODIFICADO */
     padding: 1rem 2rem;
-    color: white;
+    color: var(--cor-texto-navbar); /* MODIFICADO */
 }
 
 .navbar .logo {
@@ -54,68 +87,127 @@ img {
 }
 
 .navbar .nav-links a {
-    color: white;
+    color: var(--cor-texto-navbar); /* MODIFICADO */
     text-decoration: none;
     font-size: 1rem;
     transition: color 0.3s ease;
 }
 
 .navbar .nav-links a:hover {
-    color: #a0cfff; /* Cor de destaque ao passar o mouse */
+    color: var(--cor-link-hover-navbar); /* MODIFICADO */
 }
 
-/* ---- Lógica das Páginas (Esconder/Mostrar) ---- */
+/* ---- 4. Estilos do Switch de Tema (NOVO) ---- */
+.theme-switch-wrapper {
+    display: flex;
+    align-items: center;
+    margin-left: 1.5rem; /* Espaçamento */
+}
+.theme-switch {
+    position: relative;
+    display: inline-block;
+    width: 50px; /* Largura do switch */
+    height: 24px; /* Altura do switch */
+}
+.theme-switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: 0.4s;
+}
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 18px; /* Tamanho da bola */
+    width: 18px;  /* Tamanho da bola */
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    transition: 0.4s;
+}
+input:checked + .slider {
+    background-color: #a0cfff; /* Cor do switch ativado */
+}
+input:checked + .slider:before {
+    transform: translateX(26px); /* Distância que a bola se move */
+}
+.slider.round {
+    border-radius: 34px;
+}
+.slider.round:before {
+    border-radius: 50%;
+}
+/* Fim dos estilos do Switch */
+
+
+/* ---- 5. Lógica das Páginas (Sem alteração) ---- */
 .page {
-    display: none; /* Esconde todas as seções por padrão */
+    display: none; 
 }
-
 .page.active {
-    display: block; /* Mostra apenas a seção que tem a classe "active" */
+    display: block; 
 }
 
-/* ---- Grid de Produtos (Página Home) ---- */
+/* ---- 6. Grid de Produtos (Usando Variáveis) ---- */
 .product-grid {
     display: grid;
-    /* Cria colunas responsivas:
-       - Tenta encaixar colunas de no mínimo 300px
-       - Se não couber, elas quebram para a linha de baixo
-    */
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 1.5rem;
 }
 
 .product-card {
-    background: #fff;
-    border: 1px solid #ddd;
+    background: var(--cor-fundo-card); /* MODIFICADO */
+    border: 1px solid var(--cor-borda-card); /* MODIFICADO */
     border-radius: 8px;
     padding: 1.5rem;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+    box-shadow: 0 4px 8px var(--cor-sombra-card); /* MODIFICADO */
+    transition: background-color 0.3s, border-color 0.3s;
 }
 
 .product-card img {
     margin-bottom: 1rem;
+    height: 200px;
+    width: 100%;
+    object-fit: cover;
 }
 
 .product-card h3 {
     margin-bottom: 0.5rem;
 }
 
-/* ---- Página de Redes Sociais ---- */
-.social-links {
-    list-style: none;
+/* ---- 7. Página de Redes Sociais (Usando Variáveis) ---- */
+.social-icon-links {
+    display: flex; 
+    flex-wrap: wrap; 
+    gap: 1.5rem; 
+    margin-top: 1.5rem; 
+    justify-content: center; 
+}
+.social-icon-links a {
+    display: inline-block; 
+    transition: transform 0.3s ease; 
+}
+.social-icon-links img {
+    width: 350px;  /* Mantendo os 40px que definimos antes */
+    height: 350px; 
+    border-radius: 8px; 
+    box-shadow: 0 5px 4px var(--cor-sombra-card); /* MODIFICADO */
+}
+.social-icon-links a:hover {
+    transform: scale(1.15); 
+    opacity: 0.9;
 }
 
-.social-links li {
-    margin-bottom: 0.5rem;
-}
-
-.social-links a {
-    text-decoration: none;
-    font-size: 1.2rem;
-    color: #0066cc;
-}
-
-/* ---- Grid da Equipe (Página Integrantes) ---- */
+/* ---- 8. Grid da Equipe (Usando Variáveis) ---- */
 .team-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -123,18 +215,19 @@ img {
 }
 
 .team-card {
-    background: #fff;
+    background: var(--cor-fundo-card); /* MODIFICADO */
     border-radius: 8px;
     padding: 1rem;
     text-align: center;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+    box-shadow: 0 4px 8px var(--cor-sombra-card); /* MODIFICADO */
+    transition: background-color 0.3s, box-shadow 0.3s;
 }
 
 .team-card img {
-    border-radius: 50%; /* Deixa a foto redonda */
+    border-radius: 50%; 
     width: 150px;
     height: 150px;
-    object-fit: cover; /* Garante que a imagem preencha o círculo */
+    object-fit: cover; 
     margin-bottom: 1rem;
 }
 
@@ -144,6 +237,6 @@ img {
 
 .team-card .role {
     font-size: 0.9rem;
-    color: #666;
+    color: var(--cor-texto-funcao-equipe); /* MODIFICADO */
     font-weight: bold;
 }

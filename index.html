@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vila Mari</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <nav class="navbar">
+            <div class="logo">Vila Mari</div>
+            <ul class="nav-links">
+                <li><a href="#home" onclick="showPage('home')">Pagina principal</a></li>
+                <li><a href="#historia" onclick="showPage('historia')">Nossa História</a></li>
+                <li><a href="#redes" onclick="showPage('redes')">Redes Sociais</a></li>
+                <li><a href="#equipe" onclick="showPage('equipe')">Integrantes</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        
+        <section id="home" class="page active">
+            <h2>Nossos Produtos</h2>
+            <div class="product-grid">
+                
+                <div class="product-card">
+                    <img src="https://via.placeholder.com/300x200" alt="Imagem do Produto 1">
+                    <h3>Nome do Produto 1</h3>
+                    <p>Coloque aqui a descrição detalhada do seu produto, explicando suas funcionalidades e benefícios.</p>
+                </div>
+                <div class="product-card">
+                    <img src="https://via.placeholder.com/300x200" alt="Imagem do Produto 2">
+                    <h3>Nome do Produto 2</h3>
+                    <p>Coloque aqui a descrição detalhada do seu produto, explicando suas funcionalidades e benefícios.</p>
+                </div>
+                </div>
+        </section>
+
+        <section id="historia" class="page">
+            <h2>Nossa História</h2>
+            <p>Escreva aqui um ou mais parágrafos contando a história da sua empresa ou projeto. Fale sobre a origem da ideia, os desafios e as conquistas.</p>
+            <p>Pode adicionar mais tags `<p>Parágrafo</p>` ou `<img>` conforme precisar.</p>
+        </section>
+
+        <section id="equipe" class="page">
+            <h2>Nossa Equipe</h2>
+            <div class="team-grid">
+                
+                <div class="team-card">
+                    <img src="https://via.placeholder.com/200x200" alt="Foto do Integrante">
+                    <h3>João Victor</h3>
+                    <p class="role">CEO</p>
+                </div>
+                <div class="team-card">
+                    <img src="https://via.placeholder.com/200x200" alt="Foto do Integrante">
+                    <h3>Maria Sibelly</h3>
+                    <p class="role">RH/Marketing</p>
+                </div>
+                <div class="team-card">
+                    <img src="https://via.placeholder.com/200x200" alt="Foto do Integrante">
+                    <h3>Ângelo Lucas</h3>
+                    <p class="role">Função Adicional</p>
+                </div>
+                <div class="team-card">
+                    <img src="https://via.placeholder.com/200x200" alt="Foto do Integrante">
+                    <h3>Brenda Liberato</h3>
+                    <p class="role">Logística</p>
+                </div>
+                <div class="team-card">
+                    <img src="https://via.placeholder.com/200x200" alt="Foto do Integrante">
+                    <h3>João Lourenço</h3>
+                    <p class="role">Operacional</p>
+                </div>
+                </div>
+        </section>
+        
+        <section id="redes" class="page">
+            <h2>Nos Siga!</h2>
+            <p>Conecte-se conosco nas nossas redes sociais:</p>
+            <ul class="social-links">
+                <li><a href="https://www.instagram.com/vila.mari_" target="_blank">Instagram</a></li>
+            </ul>
+        </section>
+
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
